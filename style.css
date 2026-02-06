@@ -1,1 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.side-panel {
+    position: relative;
+    width: 35%;
+    min-height: 100vh;
+}
+
+.bg-sidebar {
+    background-image: url('images/bg-main-desktop.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Card Visuals */
+.cards-wrapper {
+    position: absolute;
+    top: 50%;
+    right: -20%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card-top,
+.card-bottom {
+    position: relative;
+    width: 447px;
+}
+
+.card-top {
+    margin-left: -3rem;
+    z-index: 2;
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-logo {
+    width: 80px;
+}
+
+#display-number {
+    font-size: 1.7rem;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.card-bottom {
+    margin-left: 3rem;
+}
+
+#display-cvc {
+    position: absolute;
+    right: 12%;
+    top: 47%;
+    font-size: 0.9rem;
+}
+
+.form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16rem;
+    max-width: 50%;
+    flex-direction: column;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    display: block;
+    border: 1px solid #21092f;
+    padding: .8rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+    color: #21092f;
+}
+
+input:focus {
+    border-color: #6448fe;
+}
+
+.number {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.5rem;
+}
+
+.cvc,
+#cvc {
+    grid-column: span 2;
+}
+
+.number>input {
+    width: 100%;
+}
+
+button {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #21092f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+label {
+    text-transform: uppercase;
+    padding-top: 1rem;
+}
+
+.error-msg {
+    color: #ff5252;
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    display: none;
+    /* Hidden by default */
+}
+
+input.error {
+    border-color: #ff5252;
+}
+
+.error-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    /* Aligns errors under the correct inputs */
+    gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .side-panel {
+        width: 100%;
+        height: 240px;
+        min-height: auto;
+    }
+
+    .cards-wrapper {
+        top: 100%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .card-top,
+    .card-bottom {
+        width: 280px;
+    }
+
+    .card-top {
+        margin: -4rem 0 0 -3rem;
+    }
+
+    .card-bottom {
+        margin: 0 0 0 2rem;
+    }
+
+    #display-number {
+        font-size: 1.1rem;
+    }
+
+    .form-container {
+        margin-top: 5rem;
+        padding: 6rem 1.5rem 3rem 1.5rem;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .card-details {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+
+.attribution {
+        font-size: 11px;
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
